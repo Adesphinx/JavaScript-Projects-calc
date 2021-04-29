@@ -4,6 +4,18 @@
     <head>
         <meta charset="utf-8">
         <title>The Calculator</title>
+
+        <style>
+          .Symbol {
+             width: 60px;
+             height: 60px;
+             text-align-last: center;
+
+          }
+
+
+        </style>
+
     </head>
     <body>
         <<h1>THE CALCULATOR</h1>
@@ -12,38 +24,38 @@
             <td align=right colspan=4><input type = "textbox" id="result" width='250px' value = 0></td>
           </tr>
           <tr>
-            <td id="clear" width="50" align=center height="50">AC</td>
-            <td id="sign" width="50" align=center>+/-</td>
-            <td id="perc" width="50" align=center>%</td>
-            <td id="divi" width="50" align=center>/</td>
+            <td id="clear" align = "center">AC</td>
+            <td id="leftp" class ="symbol">(</td>
+            <td id="rightp" class ="symbol">)</td>
+            <td id="divi" class ="symbol">/</td>
           </tr>
           <tr>
-            <td id="num7" align=center height="50">7</td>
-            <td id="num8" align=center>8</td>
-            <td id="num9" align=center>9</td>
-            <td id="mult" align=center>*</td>
+            <td id="num7" class ="symbol">7</td>
+            <td id="num8" class ="symbol">8</td>
+            <td id="num9" class ="symbol">9</td>
+            <td id="mult" class ="symbol">*</td>
           </tr>
 
           <tr>
-            <td id="num4" align=center height="50">4</td>
-            <td id="num5" align=center>5</td>
-            <td id="num6" align=center>6</td>
-            <td id="subt" align=center>-</td>
+            <td id="num4" class ="symbol">4</td>
+            <td id="num5" class ="symbol">5</td>
+            <td id="num6" class ="symbol">6</td>
+            <td id="subt" class ="symbol">-</td>
           </tr>
           <tr>
-            <td id="num1" align=center height="50">1</td>
-            <td id="num2" align=center>2</td>
-            <td id="num3" align=center>3</td>
-            <td id="plus" align=center>+</td>
+            <td id="num1" class ="symbol">1</td>
+            <td id="num2" class ="symbol">2</td>
+            <td id="num3" class ="symbol">3</td>
+            <td id="plus" class ="symbol">+</td>
           </tr>
           <<tr>
-            <<td id="num0" align=left colspan="2">0</td>
-            <<td id="deci" align=center>.</td>
-            <<td id="eqt" align=center>=</td>
+            <<td id="num0" class ="symbol" colspan="2">0</td>
+            <<td id="deci" class ="symbol">.</td>
+            <<td id="eqt" align = "center">=</td>
           </tr>
         </table>
         <<script type="text/javascript">
-          function printSymbol(e)
+        /*  function printSymbol(e)
           {
             let result = document.getElementById("result");
             let obj =e.target;
@@ -56,9 +68,9 @@
 
 
 
-            }
+            } */
 // if the clicked object is digit
-          function printDigit(e)
+          function printSymbol(e)
           {
             let result = document.getElementById("result");
             let obj =e.target;
@@ -72,8 +84,8 @@
           }
 
 
-          let result = document.getElementById("result");
-          let num0 = document.getElementById("num0");
+
+      /*    let num0 = document.getElementById("num0");
           let num1 = document.getElementById("num1");
           let num2 = document.getElementById("num2");
           let num3 = document.getElementById("num3");
@@ -84,37 +96,47 @@
           let num8 = document.getElementById("num8");
           let num9 = document.getElementById("num9");
 
-        //  let clear = document.getElementById("clear");
-          let sign = document.getElementById("sign");
-          let perc = document.getElementById("perc");
+
+          let leftp = document.getElementById("leftp");
+          let rightp = document.getElementById("rightp");
           let divi = document.getElementById("divi");
           let mult = document.getElementById("mult");
           let subt = document.getElementById("subt");
           let plus = document.getElementById("plus");
           let deci = document.getElementById("deci");
+          */
+          let result = document.getElementById("result");
+          let clear = document.getElementById("clear");
           let eqt = document.getElementById("eqt");
 
 
-          num0.addEventListener("click", printDigit);
-          num1.addEventListener("click", printDigit);
-          num2.addEventListener("click", printDigit);
-          num3.addEventListener("click", printDigit);
-          num4.addEventListener("click", printDigit);
-          num5.addEventListener("click", printDigit);
-          num6.addEventListener("click", printDigit);
-          num7.addEventListener("click", printDigit);
-          num8.addEventListener("click", printDigit);
-          num9.addEventListener("click", printDigit);
+          let symbols = document.getElementsByClassName("symbol")
+
+          for (let i = 0; i < symbols.lenth; i++)
+              symbols[i].addEventListener("click", printSymbol);
+
+
+      /*    num0.addEventListener("click", printSymbol);
+          num1.addEventListener("click", printSymbol);
+          num2.addEventListener("click", printSymbol);
+          num3.addEventListener("click", printSymbol);
+          num4.addEventListener("click", printSymbol);
+          num5.addEventListener("click", printSymbol);
+          num6.addEventListener("click", printSymbol);
+          num7.addEventListener("click", printSymbol);
+          num8.addEventListener("click", printSymbol);
+          num9.addEventListener("click", printSymbol);
 
           //clear.addEventListener("click", printSymbol);
-          sign.addEventListener("click", printSymbol);
-          perc.addEventListener("click", printSymbol);
+          leftp.addEventListener("click", printSymbol);
+          rightp.addEventListener("click", printSymbol);
           divi.addEventListener("click", printSymbol);
           mult.addEventListener("click", printSymbol);
           subt.addEventListener("click", printSymbol);
           plus.addEventListener("click", printSymbol);
           deci.addEventListener("click", printSymbol);
-          
+          */
+
         //  eqt.addEventListener("click", printSymbol);
 
           clear.addEventListener("click",
